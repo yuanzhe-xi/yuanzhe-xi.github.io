@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Research | Yuanzhe Xi</title>
+  <meta name="description" content="Research themes in Yuanzhe Xi's group: data-driven numerical linear algebra, scientific machine learning, preconditioning, analog-digital computing, and high performance software.">
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body data-page="research">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">YX</span>
+        <span class="brand-text">
+          <span class="brand-name">Yuanzhe Xi</span>
+          <span class="brand-unit">Department of Mathematics, Emory University</span>
+        </span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" data-page="home">Home</a>
+        <a href="research.html" data-page="research">Research</a>
+        <a href="publications.html" data-page="publications">Publications</a>
+        <a href="software.html" data-page="software">Software</a>
+        <a href="teaching.html" data-page="teaching">Teaching</a>
+        <a href="group.html" data-page="group">Group</a>
+        <a href="events.html" data-page="events">Events</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="page-title">
+      <div class="page-title-inner">
+        <h1>Research</h1>
+        <p>
+          My research develops numerical algorithms for large-scale problems in computational science and data science. The work combines numerical linear algebra, scientific machine learning, and high performance computing, with emphasis on methods that are analyzable, scalable, and usable in software.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <h2>Recent Research Directions</h2>
+        </div>
+      </div>
+      <div class="grid">
+        <article class="card highlight research-card">
+          <h3>Data-Driven Numerical Linear Algebra and Scientific Machine Learning</h3>
+          <figure class="direction-figure">
+            <div class="direction-figure-panels">
+              <img src="assets/img/research/hierarchical-matrix-structure.png" alt="Hierarchical matrix structure for data-driven approximation" loading="lazy">
+              <img src="assets/img/research/sfno-schemes.png" alt="Schematic comparison of RK4, autoregressive neural-operator rollout, and ST-FNO" loading="lazy">
+            </div>
+            <figcaption>
+              Representative examples: hierarchical matrix structure and ST-FNO temporal prediction.
+              <a href="https://arxiv.org/abs/2206.01885">Data-driven NLA</a>
+            </figcaption>
+          </figure>
+          <p>
+            We develop numerical methods that use information from data, simulations, and problem structure to build faster and more reliable computation. This includes both data-driven matrix algorithms and learning-assisted solvers, with an emphasis on methods that remain interpretable, stable, and useful inside large scientific workflows.
+          </p>
+          <ul class="research-points">
+            <li>Low-rank approximation, hierarchical compression, and data-guided matrix algorithms.</li>
+            <li>Learning-assisted multigrid, graph-based preconditioners, neural operators, and surrogate solver components.</li>
+            <li>Representative problem classes include sparse and kernel matrices, covariance operators, PDE discretizations, and large-scale operators from scientific computing.</li>
+          </ul>
+        </article>
+
+        <article class="card highlight research-card">
+          <h3>Preconditioned SGD and Stochastic Optimization</h3>
+          <figure class="direction-figure">
+            <img src="assets/img/research/himuon-tiled-newton-schulz.png" alt="Tiled Newton-Schulz workflow for HiMuon optimization" loading="lazy">
+            <figcaption>
+              Tiled Newton-Schulz updates for efficient Muon-type optimization.
+              <a href="https://arxiv.org/abs/2606.27216">HiMuon paper</a>
+            </figcaption>
+          </figure>
+          <p>
+            We study how preconditioning changes stochastic optimization for deep learning and scientific machine learning. This direction includes PSGD design principles, HiMuon-type matrix updates, and preconditioned single-sample estimators, with attention to local conditioning, stochastic noise, basin stability, variance reduction, and scalable implementation.
+          </p>
+          <ul class="research-points">
+            <li>Preconditioner design criteria for SGD and related first-order training methods.</li>
+            <li>Noise floors, basin stability, and robustness of preconditioned stochastic updates.</li>
+            <li>Preconditioned single-sample and truncated estimators for scalable stochastic optimization.</li>
+          </ul>
+        </article>
+
+        <article class="card highlight research-card">
+          <h3>Mixed Precision, Analog Computing, and Parallel Algorithms</h3>
+          <figure class="direction-figure">
+            <img src="assets/img/research/analog-digital-solver-architecture.png" alt="Hybrid digital-analog solver architecture" loading="lazy">
+            <figcaption>
+              Hybrid digital-analog preconditioning architecture for Krylov methods.
+              <a href="https://arxiv.org/abs/2606.17227">Analog paper</a>
+            </figcaption>
+          </figure>
+          <p>
+            We design numerical algorithms for modern and emerging architectures, with emphasis on mixed precision, hybrid analog-digital computing, and parallel computing. The central question is how to use lower-precision or approximate hardware for expensive linear algebra kernels while preserving accuracy through correction, stability checks, and reproducible performance analysis.
+          </p>
+          <ul class="research-points">
+            <li>Mixed precision projection methods for eigenvalue and singular value problems.</li>
+            <li>Analog-digital algorithms that combine approximate operations with digital correction.</li>
+            <li>Parallel solvers and high-performance software for large scientific datasets.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <h2>Applications</h2>
+        </div>
+      </div>
+      <div class="topic-list application-list">
+        <article>
+          <h3>Inverse Problems and Computational Imaging</h3>
+          <p class="muted">
+            Variational reconstruction, regularization, and scalable solvers for imaging and other ill-posed inverse problems.
+          </p>
+        </article>
+        <article>
+          <h3>PDEs and Scientific Simulation</h3>
+          <p class="muted">
+            Fast linear algebra, preconditioning, and reduced-complexity operators for discretized differential equations.
+          </p>
+        </article>
+        <article>
+          <h3>Seismic and Geophysical Computation</h3>
+          <p class="muted">
+            Large eigenvalue problems, domain decomposition, and high-performance algorithms for normal-mode computation.
+          </p>
+        </article>
+        <article>
+          <h3>Large Scientific and Data-Driven Problems</h3>
+          <p class="muted">
+            Scalable algorithms and software for structured data, uncertainty-aware prediction, and computational science workflows.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <article class="callout">
+        <h2>Interested in collaborating?</h2>
+        <p>
+          I am especially interested in projects that connect rigorous numerical methods with concrete computational challenges in science, engineering, and data science.
+        </p>
+        <a class="button secondary" href="mailto:yuanzhe.xi@emory.edu">Contact by Email</a>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div><strong>Yuanzhe Xi</strong><br>Department of Mathematics, Emory University</div>
+      <div><a href="mailto:yuanzhe.xi@emory.edu">yuanzhe.xi@emory.edu</a></div>
+    </div>
+  </footer>
+  <script src="assets/js/site.js"></script>
+</body>
+</html>
