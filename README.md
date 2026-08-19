@@ -14,7 +14,7 @@ This is a static HTML/CSS personal academic website with a clean, light visual s
 
 ## Theme
 
-The design uses an Emory-inspired accent palette on a mostly white background, with restrained typography and simple content sections. Event pages include sponsor logos only where they are part of the event record.
+The design uses an Emory-inspired accent palette on a low-glare off-white background, with restrained typography and simple content sections. The main site includes an optional dim mode for visitors who prefer a softer dark interface. Event pages include sponsor logos only where they are part of the event record.
 
 ## Department Server Deployment
 
