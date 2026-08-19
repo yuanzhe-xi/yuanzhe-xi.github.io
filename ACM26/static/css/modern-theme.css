@@ -1,0 +1,251 @@
+:root {
+    /* Palette - Emory Inspired & Modernized */
+    --primary-blue: #002878;
+    --primary-dark: #001a53;
+    --accent-gold: #D28E00;
+    --accent-gold-hover: #b57b00;
+    
+    /* Neutrals */
+    --bg-body: #F9FAFB;
+    --bg-surface: #FFFFFF;
+    --text-main: #111827;
+    --text-muted: #6B7280;
+    --text-light: #9CA3AF;
+    --border-light: #E5E7EB;
+
+    /* Spacing & Layout */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 24px;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-blue: 0 10px 25px -5px rgba(0, 40, 120, 0.25);
+
+    /* Animation */
+    --ease-out: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+body {
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Modern Typography Overrides */
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Exo", sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--primary-blue);
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+/* Subtle underline decoration for page titles */
+.page-header h1::after {
+    content: '';
+    display: block;
+    width: 60%;
+    height: 4px;
+    background: var(--accent-gold);
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+}
+
+/* Component: Modern Cards */
+.modern-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+}
+
+.modern-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Component: Buttons */
+.btn-primary-modern {
+    background-color: var(--primary-blue);
+    color: white;
+    font-family: "Exo", sans-serif;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-md);
+    border: none;
+    box-shadow: var(--shadow-blue);
+    transition: all 0.2s var(--ease-out);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-primary-modern:hover {
+    background-color: var(--primary-dark);
+    transform: scale(1.02);
+    box-shadow: 0 15px 30px -5px rgba(0, 40, 120, 0.4);
+    text-decoration: none;
+    color: white;
+}
+
+.btn-secondary-modern {
+    background-color: white;
+    color: var(--primary-blue);
+    border: 2px solid var(--primary-blue);
+    font-family: "Exo", sans-serif;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-md);
+    transition: all 0.2s ease;
+}
+
+.btn-secondary-modern:hover {
+    background-color: var(--bg-body);
+    color: var(--primary-dark);
+    text-decoration: none;
+}
+
+/* Feature: Registration Hero Section */
+.registration-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, var(--bg-surface) 0%, #EFF6FF 100%);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border-light);
+    text-align: center;
+    margin-top: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorative background element */
+.registration-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -10%;
+    width: 200px;
+    height: 200px;
+    background: var(--accent-gold);
+    opacity: 0.05;
+    border-radius: 50%;
+    filter: blur(60px);
+    z-index: 0;
+}
+
+.registration-hero h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--primary-blue);
+    z-index: 1;
+}
+
+.registration-hero p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin-bottom: 2rem;
+    z-index: 1;
+}
+
+/* Status Badge */
+.status-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 99px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    z-index: 1;
+}
+
+.status-badge.open {
+    background-color: #DEF7EC;
+    color: #03543F;
+    border: 1px solid #BCF0DA;
+}
+
+/* Navbar Modernization */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-light);
+    box-shadow: var(--shadow-sm);
+}
+
+.navbar-brand {
+    font-family: "Exo", sans-serif;
+    font-weight: 800;
+    color: var(--primary-blue) !important;
+    letter-spacing: -0.03em;
+}
+
+.nav-link {
+    font-weight: 500;
+    color: var(--text-muted) !important;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover, .nav-item.active .nav-link {
+    color: var(--primary-blue) !important;
+}
+
+.nav-item.active .nav-link {
+    position: relative;
+}
+
+.nav-item.active .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0.5rem;
+    right: 0.5rem;
+    height: 2px;
+    background-color: var(--accent-gold);
+    border-radius: 2px;
+}
+
+/* Program Schedule Details */
+.schedule-table .event-details-row td {
+    background-color: #F9FAFB;
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+}
+
+.speaker-list {
+    margin: 0;
+    padding-left: 1.5rem;
+    list-style: decimal;
+}
+
+.speaker-list li {
+    margin-bottom: 0.4rem;
+}
+
+/* Speaker Grid Alignment */
+.speaker-grid > [class*="col-"] {
+    display: flex;
+}
+
+.speaker-grid .modern-card {
+    width: 100%;
+}

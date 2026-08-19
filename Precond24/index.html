@@ -1,0 +1,577 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <!-- Required meta tags -->
+    <meta charset="utf-8"/>
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- External Javascript libs_ext  -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@5/dist/d3.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.3/dist/handlebars.min.js"
+            integrity="sha256-/PJBs6QWvXijOFIX04kZpLb6ZtSQckdOIavLWKKOgXU="
+            crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+
+    <script
+            src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"
+    ></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+            integrity="sha256-WqU1JavFxSAMcLP2WIOI+GB2zWmShMI82mTpLDcqFUg="
+            crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/min/moment.min.js"
+            integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ="
+            crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment-timezone@0.5.28/builds/moment-timezone-with-data.min.js"
+            integrity="sha256-IWYg4uIC8/erItNXYvLtyYHioRi2zT1TFva8qaAU/ww="
+            crossorigin="anonymous"></script>
+
+
+    <!-- Library libs_ext -->
+    <script src="static/js/libs_ext/typeahead.bundle.js"></script>
+
+
+    <!--    Internal Libs -->
+    <script src="static/js/data/api.js"></script>
+
+    
+
+    <!-- External CSS -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+          integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY="
+          crossorigin="anonymous">
+
+    <!-- External Fonts (no google for china) -->
+    <link
+            href="static/css/Lato.css"
+            rel="stylesheet"
+    />
+    <link href="static/css/Exo.css" rel="stylesheet"/>
+    <link
+            href="static/css/Cuprum.css"
+            rel="stylesheet"
+    />
+    <link rel="stylesheet" href="static/css/main.css"/>
+<!--    <link rel="stylesheet" href="static/css/fa_regular.css"/>-->
+    <link rel="stylesheet" href="static/css/fa_solid.css"/>
+    <link rel="stylesheet" href="static/css/lazy_load.css"/>
+    <link rel="stylesheet" href="static/css/typeahead.css"/>
+
+    <title>Precond 24</title>
+    
+</head>
+
+<body>
+<!-- NAV -->
+
+<nav
+        class="navbar sticky-top navbar-expand-lg navbar-light bg-light mr-auto"
+        id="main-nav"
+>
+    <div class="container">
+        <a class="navbar-brand" href="index.html">
+            <img
+                    class="logo" src="static/images/logo.gif"
+                    height="auto"
+            width="40px"
+            />
+        </a>
+        
+        <a class="navbar-brand" href="index.html">Precond 24</a>
+        
+        <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+                class="collapse navbar-collapse text-right flex-grow-1"
+                id="navbarNav"
+        >
+            <ul class="navbar-nav ml-auto">
+                
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                
+                <li class="nav-item ">
+                  <a class="nav-link" href="directions.html">Directions</a>
+                </li>
+
+                <li class="nav-item ">
+                  <a class="nav-link" href="program.html">Program</a>
+                </li>
+
+                <li class="nav-item ">
+                    <a class="nav-link" href="registration.html">Registration</a>
+                </li>
+              
+                <li class="nav-item ">
+                    <a class="nav-link" href="locations.html">Hotels and Travel</a>
+                </li>
+                
+                <li class="nav-item ">
+                    <a class="nav-link" href="pastEvents.html">Past Events</a>
+                </li>
+                
+                <!--<li class="nav-item ">
+                  <a class="nav-link" href="accepted.html">Accepted Talks and Minisymposia</a>
+                </li>-->
+              
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+<!-- User Overrides -->
+
+<style>
+  .back {
+    background: url("static/images/atl_dt_cover.jpeg") no-repeat center;
+    background-size: cover;
+  }
+  .back h1 {
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+  }
+  .back h2 {
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+  }
+</style>
+
+<div class="jumbotron jumbotron-fluid back" style="padding-bottom: 20px;">
+  <div class="row header p-6 m-5">
+    <div class="p-1 mx-auto text-center text-white col-md-9 col-sm-12">
+      <h2>
+        International Conference On Preconditioning Techniques<br>For Scientific and Industrial Applications</h2>
+      <h2 class="p-5">
+        June 10<span style="color: white;">&#8212;</span>12, 2024 <br> Georgia Institute of Technology <br> Atlanta, USA
+      </h2>
+      <div class="countdown-flipper">
+        <div class="wrapper hidden" id="countdown-flipper" data-is-active="false"></div>
+          <div class="page-header text-center">
+            <p>
+              <a class="btn-primary btn-lg" href="program.html">Conference Program</a>
+            <p>
+          </div>    
+        </div>
+        <!--<h4 style="margin-top: 20px;">Deadline for Registration: May 04, 2024</h4>
+        <p>The registration fee is US $225 (regular) and US $175 (students) which includes the conference dinner on June 11</p>
+        <div class="page-header text-center">
+          <p>
+            <a class="btn-primary btn-lg" href="https://docs.google.com/forms/d/e/1FAIpQLSc4Fg8LjyqX92dbiQK0m5uQBF9BiafLz_SVT7A_JLx5yXf5Cg/viewform?usp=sf_link">Submit Minisymposia or Contributed Talks</a>
+          <p>
+        </div> 
+        <h4 style="margin-top: 20px;">Deadline for Submission: April 29, 2024</h4>-->
+      </div>
+      </div>
+    </div>
+  </div>
+
+<hr />
+<div class="container">
+    <!-- Tabs -->
+    <div class="tabs">
+         
+    </div>
+    <!-- Content -->
+    <div class="content">
+        
+
+      <h5> The International Conference on Preconditioning Techniques for Scientific and Industrial Applications, 
+      <b>Preconditioning 2024</b>, is the thirteenth in a series of conferences that focus on preconditioning techniques 
+      for sparse and structured matrix computations. As problem sizes and problem complexity continue to increase 
+      and as new applications emerge, such as those in inverse problems and machine learning, preconditioning techniques 
+      become increasingly important and must also adapt. The conference brings together researchers developing new methods 
+      and tools, along with scientists and engineers addressing complex issues of applying preconditioning techniques in 
+      large-scale and industrial settings. </h5> 
+<hr />     
+<!-- Organizers -->
+
+<center>
+  <img src="static/images/group_2.jpg" class="rounded" style="width: 900px;" />
+</center>
+
+<hr />  
+
+<div class="page-header text-center">
+  <h2 style="margin-top: 30px;margin-bottom: 30px;">Panel and Tutorial on Machine Learning + Preconditioning</h2>
+</div>
+<div class="page-content">
+
+  
+    <h5> The conference will feature a plenary panel discussion on the role of machine learning in the field of preconditioning. 
+      The panelists will first present a survey or tutorial on the potential of using machine learning for preconditioning (and vice-versa) 
+      before opening the floor for a general discussion on exploiting the synergies between machine learning and preconditioning. 
+    </h5>  
+<hr /> 
+
+
+<div class="container">
+  <!-- Tabs -->
+  <div class="tabs">
+      
+
+  </div>
+  <!-- Content -->
+  <div class="content">
+<div class="page-header text-center">
+  <h2 style="margin-top: 30px;margin-bottom: 30px;">Conference Themes</h2>
+</div>
+<div class="page-content">
+  <p>The themes to be covered at the conference include, but are not limited to, the following:</p>
+<ul>
+<li>Nonlinear preconditioning</li>
+<li>Machine learning for preconditioning and preconditioning for machine learning</li>
+<li>Preconditioning for inverse problems</li>
+<li>Randomized algorithms for preconditioning</li>
+<li>Mixed-precision preconditioning</li>
+<li>High-performance and parallel preconditioning and software</li>
+<li>Preconditioning for data assimilation</li>
+<li>Domain decomposition and multigrid methods</li>
+<li>Physics-based preconditioners</li>
+<li>Algebraic preconditioners: incomplete factorizations and sparse approximate inverses</li>
+<li>Preconditioning for indefinite and saddle point problems</li>
+<li>Inexact solvers</li>
+<li>Hierarchical matrices and structured matrix approximation</li>
+</ul>
+</div>
+
+  </div>
+</div>
+
+
+<div class="border-top my-3"></div>
+<div class="row p-4" id="faq">
+  <div class="col-12 bd-content">
+    <h2 class="text-center">Invited Speakers</h2>
+  </div>
+</div>
+<div class="row">
+  
+  <div class="col-md-4 col-xs-6">
+    <div class="pp-card">
+      <div class="pp-card-header" class="text-muted">
+        <h5 class="card-title" align="center">  
+          <a href="https://mdessole.github.io/" target="blank">Monica Dessole</a>
+        </h5>
+        <!--<div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Researcher
+          </h6>
+        </div>-->
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            CERN SFT-EP, Switzerland <br />   <br />   
+          </h6>
+        </div>
+        <center>
+          <img src="https://mdessole.github.io/images/IMG_9995.JPG" class="rounded" style="height: 150px;" />
+        </center>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4 col-xs-6">
+    <div class="pp-card">
+      <div class="pp-card-header" class="text-muted">
+        <h5 class="card-title" align="center">
+          <a href="https://selimegurol.com/" target="blank">Selime Gürol</a>
+        </h5>
+        <!--<div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Researcher
+          </h6>
+        </div>-->
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            CERFACS, France <br />   <br />   
+          </h6>
+        </div>
+        <center>
+          <img src="https://selimegurol.com/wp-content/uploads/elementor/thumbs/profile-selime-q1326l1clpss4xxwfyr8jpdxatl1iicmcz2zkab8i8.jpg" class="rounded" style="height: 150px;" />
+        </center>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4 col-xs-6">
+    <div class="pp-card">
+      <div class="pp-card-header" class="text-muted">
+        <h5 class="card-title" align="center">
+          <a href="https://searhein.github.io/" target="blank">Alexander Heinlein</a>
+        </h5>
+        <!--<div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Assistant Professor
+          </h6>
+        </div>-->
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Delft University of Technology, Netherlands  <br />   <br /> 
+          </h6>
+        </div>
+        <center>
+          <img src="https://searhein.github.io/assets/img/prof_pic5.jpg" class="rounded" style="height: 150px;" />
+        </center>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4 col-xs-6">
+    <div class="pp-card">
+      <div class="pp-card-header" class="text-muted">
+        <h5 class="card-title" align="center">
+          <a href="https://people.llnl.gov/li50" target="blank">Rui Peng Li</a>
+        </h5>
+        <!--<div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Computer Scientist
+          </h6>
+        </div>-->
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Lawrence Livermore National Laboratory, USA  <br />   <br /> 
+          </h6>
+        </div>
+        <center>
+          <img src="https://people.llnl.gov/sites/default/files/styles/medium/public/img/li50_1.png?itok=s3nyK9MG" class="rounded" style="height: 150px;" />
+        </center>
+      </div>
+    </div>
+  </div>
+  
+ 
+  
+  <div class="col-md-4 col-xs-6">
+    <div class="pp-card">
+      <div class="pp-card-header" class="text-muted">
+        <h5 class="card-title" align="center">
+          <a href="https://pazner.github.io/" target="blank">Will Pazner</a>
+        </h5>
+        <!--<div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Assistant Professor
+          </h6>
+        </div>-->
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Portland State University, USA <br />   <br />   
+          </h6>
+        </div>
+        <center>
+          <img src="https://pazner.github.io/img/will_thumbnail.jpg" class="rounded" style="height: 150px;" />
+        </center>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4 col-xs-6">
+    <div class="pp-card">
+      <div class="pp-card-header" class="text-muted">
+        <h5 class="card-title" align="center">
+          <a href="https://www.numerical.rl.ac.uk/people/rees/" target="blank">Tyrone Rees</a>
+        </h5>
+        <!--<div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Researcher
+          </h6>
+        </div>-->
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            STFC, UK <br />   <br />   
+          </h6>
+        </div>
+        <center>
+          <img src="static/images/Rees.jpg" class="rounded" style="height: 150px;" />
+        </center>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4 col-xs-6">
+    <div class="pp-card">
+      <div class="pp-card-header" class="text-muted">
+        <h5 class="card-title" align="center">
+          <a href="https://www.unm.edu/~jbschroder/" target="blank">Jacob B. Schroder</a>
+        </h5>
+        <!--<div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Associate Professor
+          </h6>
+        </div>-->
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            University of New Mexico, USA <br />   <br />   
+          </h6>
+        </div>
+        <center>
+          <img src="https://www.unm.edu/~jbschroder/img/schroder-final.jpg" class="rounded" style="height: 150px;" />
+        </center>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+   
+  <hr />     
+  <div class="page-header text-center">
+  </div>
+
+  
+    
+
+  
+      
+<!-- Registration -->
+<!-- 
+<div class="container">
+  <div class="tabs">
+<br>
+<div class="page-header text-center">
+
+
+  <h2 style="margin-top: -10px;margin-bottom: 30px;">Registration</h2>
+</div>
+<div class="page-content">
+      
+  
+    <h5> Registration will be available in early 2024. The registration fee will be US $225 (regular) and US $175 (students) which includes the conference dinner on June 11. The registration deadline will be May 4, 2024.
+    </h5>  
+    <div class="page-header text-center">
+      <p><a class="btn-primary btn-lg" href="https://www.math.emory.edu/~yxi26/Precond24/index.html"> Registration opens in early 2024</a></p>
+    </div>
+     -->
+<!-- Organizers -->
+
+<div class="container">
+<!-- Tabs -->
+<div class="tabs">
+
+
+
+<h2 style="margin-top: 30px;margin-bottom: 30px;"><center>Organizers</center></h2>
+<h4>Conference Chairs</h4>
+<ul>
+<li>Esmond G. Ng, Lawrence Berkeley National Laboratory, USA</li>
+<li>Yousef Saad, University of Minnesota, USA</li>
+<li>Andy Wathen, University of Oxford, UK</li>
+</ul>
+<h4>Local Organization Committee</h4>
+<ul>
+<!--
+<li><a href="https://faculty.cc.gatech.edu/~echow/">Edmond Chow</a>, Georgia Tech, USA</li>
+<li><a href="https://www.math.emory.edu/~yxi26/">Yuanzhe Xi</a>, Emory University, USA</li>
+-->
+<li>Edmond Chow, Georgia Institute of Technology, USA</li>
+<li>Yuanzhe Xi, Emory University, USA</li>
+</ul>
+<h4>Program Committee</h4>
+<ul>
+<li>Edmond Chow (co-chair, SIAM rep.), Georgia Institute of Technology, USA</li>
+<li>Yuanzhe Xi (co-chair), Emory University, USA</li>
+<li>Hartwig Anzt, University of Tennessee, USA</li>
+<li>Michele Benzi, Scuola Normale Superiore, Italy</li>
+<li>Matthias Bollhoefer, TU Braunschweig, Germany</li>
+<li>Erik Boman, Sandia National Laboratories, USA</li>
+<li>Jed Brown, University of Colorado Boulder, USA</li>
+<li>Xiao-Chuan Cai, University of Macau, China</li>
+<li>Victorita Dolean, TU Eindhoven, Netherlands</li>
+<li>Melina Freitag, University of Potsdam, Germany</li>
+<li>Chen Greif, University of British Columbia, Canada</li>
+<li>Luke Olson, University of Illinois at Urbana-Champaign, USA</li>
+<li>Daniel Osei-Kuffuor, Lawrence Livermore National Laboratory, USA</li>
+<li>John Pearson, University of Edinburgh, Scotland</li>
+<li>Wil Schilders, TU Eindhoven, Netherlands</li>
+<li>Nicole Spillane, CNRS, Ecole Polytechnique, France</li>
+<li>Martin Stoll, TU Chemnitz, Germany</li>
+<li>Miroslav Tuma, Charles University, Czech Republic</li>
+<li>Qiang Ye, University of Kentucky, USA</li>
+<li>Irad Yavneh, Technion, Israel</li>
+<li>Rio Yokota, Tokyo Institute of Technology, Japan</li>
+</ul>
+
+
+    </div>
+</div>
+
+
+
+  <!-- Sponsors -->
+  
+  <div class="container">
+    <hr />
+    <h3>Sponsors</h3>
+    <div class="col-md-12 col-xs-6 mx-auto">
+      <img class="img-fluid" src="static/images/6logos.png" alt="Sponsors">
+      <!--<a href="https://www.siam.org/"><img class="img-fluid" src="static/images/SIAM_IN_COOP_horizontal_teal.jpg" alt="SIAM"></a>
+      <a href="https://www.energy.gov/"><img class="img-fluid" src="static/images/DOE.png" alt="DOE"></a>
+      <p>SIAM Representative: <a href="https://faculty.cc.gatech.edu/~echow/">Edmond Chow</a></p>
+      -->
+    </div>
+  </div>
+
+
+
+
+<!-- Google Analytics -->
+<script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=UA-"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+
+  gtag("js", new Date());
+  gtag("config", "UA-");
+</script>
+
+<!-- Code for hash tags -->
+<script type="text/javascript">
+  $(document).ready(function () {
+    if (window.location.hash !== "") {
+      $(`a[href="${window.location.hash}"]`).tab("show");
+    }
+
+    $("a[data-toggle='tab']").on("shown.bs.tab", function (e) {
+      const hash = $(e.target).attr("href");
+      if (hash.substr(0, 1) === "#") {
+        const position = $(window).scrollTop();
+        window.location.replace(`#${hash.substr(1)}`);
+        $(window).scrollTop(position);
+      }
+    });
+  });
+</script>
+<!--    <script src="static/js/modules/lazyLoad.js"></script>-->
+
+</body>
+</html>

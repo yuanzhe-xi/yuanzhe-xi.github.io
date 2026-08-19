@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <!-- Required meta tags -->
+    <meta charset="utf-8"/>
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- External Javascript libs_ext  -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@5/dist/d3.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.3/dist/handlebars.min.js"
+            integrity="sha256-/PJBs6QWvXijOFIX04kZpLb6ZtSQckdOIavLWKKOgXU="
+            crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+
+    <script
+            src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"
+    ></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+            integrity="sha256-WqU1JavFxSAMcLP2WIOI+GB2zWmShMI82mTpLDcqFUg="
+            crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/min/moment.min.js"
+            integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ="
+            crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment-timezone@0.5.28/builds/moment-timezone-with-data.min.js"
+            integrity="sha256-IWYg4uIC8/erItNXYvLtyYHioRi2zT1TFva8qaAU/ww="
+            crossorigin="anonymous"></script>
+
+
+    <!-- Library libs_ext -->
+    <script src="static/js/libs_ext/typeahead.bundle.js"></script>
+
+
+    <!--    Internal Libs -->
+    <script src="static/js/data/api.js"></script>
+
+    
+
+    <!-- External CSS -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+          integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY="
+          crossorigin="anonymous">
+
+    <!-- External Fonts (no google for china) -->
+    <link
+            href="static/css/Lato.css"
+            rel="stylesheet"
+    />
+    <link href="static/css/Exo.css" rel="stylesheet"/>
+    <link
+            href="static/css/Cuprum.css"
+            rel="stylesheet"
+    />
+    <link rel="stylesheet" href="static/css/main.css"/>
+    <link rel="stylesheet" href="static/css/modern-theme.css"/>
+<!--    <link rel="stylesheet" href="static/css/fa_regular.css"/>-->
+    <link rel="stylesheet" href="static/css/fa_solid.css"/>
+    <link rel="stylesheet" href="static/css/lazy_load.css"/>
+    <link rel="stylesheet" href="static/css/typeahead.css"/>
+
+    <title>ACM 2026: Program</title>
+    
+</head>
+
+<body>
+<!-- NAV -->
+
+<nav
+        class="navbar sticky-top navbar-expand-lg navbar-light bg-light mr-auto"
+        id="main-nav"
+>
+    <div class="container">
+        <a class="navbar-brand" href="index.html">ACM 2026</a>
+        
+        <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+                class="collapse navbar-collapse text-right flex-grow-1"
+                id="navbarNav"
+        >
+            <ul class="navbar-nav ml-auto">
+                
+                <li class="nav-item ">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                
+                <li class="nav-item ">
+                        <a class="nav-link" href="directions.html">
+                            Directions
+                            </a>
+                    </li>
+
+                    <li class="nav-item active">
+                        <a class="nav-link" href="program.html">Program</a>
+                      </li>
+      
+                <li class="nav-item ">
+                        <a class="nav-link" href="registration.html">Registration</a>
+                    </li>
+                  
+                <li class="nav-item">
+                    <a class="nav-link" href="locations.html">
+                        Hotels and Travel
+                        </a>
+                </li>
+                
+                <li class="nav-item ">
+                    <a class="nav-link" href="pastEvents.html">Past Events</a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- User Overrides -->
+
+<div class="container py-5">
+    
+<div class="text-center mt-3 mb-5">
+    <a href="ACM_program.pdf" target="_blank"
+       style="display:inline-block; padding:0.75rem 1.5rem; background:var(--primary-blue); color:white; border-radius:var(--radius-md); text-decoration:none; font-weight:600;">
+        Download Program PDF
+    </a>
+</div>
+  
+    <style>
+        .schedule-day {
+            margin-bottom: 3rem;
+        }
+        .schedule-header {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .schedule-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: white;
+            border: 1px solid var(--border-light);
+            border-top: none;
+            border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+            overflow: hidden;
+        }
+        .schedule-table th, .schedule-table td {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+        .schedule-table tr:last-child td {
+            border-bottom: none;
+        }
+        .time-col {
+            font-family: "Exo", sans-serif;
+            font-weight: 600;
+            color: var(--text-muted);
+            width: 180px;
+            white-space: nowrap;
+        }
+        .event-col {
+            color: var(--text-main);
+        }
+        .event-type-plenary {
+            background-color: #EFF6FF;
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+        .event-type-break {
+            background-color: #F9FAFB;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+        .event-type-social {
+            background-color: #FFFBEB;
+            color: #92400E;
+            font-weight: 600;
+        }
+    </style>
+
+    <!-- Friday, April 3 -->
+    <div class="schedule-day modern-card p-0">
+        <div class="schedule-header">
+            <h3 class="m-0 text-white" style="font-size: 1.5rem;">Friday, April 3</h3>
+            <span class="badge badge-light" style="font-size: 0.9rem; color: var(--primary-blue);">12:30 PM – 6:15 PM</span>
+        </div>
+        <table class="schedule-table">
+            <tbody>
+                <tr>
+                    <td class="time-col">12:30 - 1:10 PM</td>
+                    <td class="event-col">Check-in / Registration</td>
+                </tr>
+                <tr>
+                    <td class="time-col">1:10 - 1:15 PM</td>
+                    <td class="event-col"><strong>Opening Remarks</strong> <small>(Jim Nagy)</small></td>
+                </tr>
+                <tr class="event-type-plenary">
+                    <td class="time-col">1:15 - 2:00 PM</td>
+                    <td class="event-col">Plenary Talk 1 <small>(45 min)</small> — Richard Lehoucq (Sandia National Laboratories) <br>
+  <span class="talk-title">Title: The Poisson Tensor Completion Parametric Estimator</span></td>
+                </tr>
+                <tr>
+                    <td class="time-col">2:00 - 3:30 PM</td>
+                    <td class="event-col"><strong>Student Talk Session I (Chair: Wenjing Liao)</strong></td>
+                </tr>
+                <tr class="event-details-row">
+                    <td class="time-col"></td>
+                    <td class="event-col">
+                        <ol class="speaker-list">
+                            <li>Mitchell Scott &mdash; What Makes a Good Data Science Preconditioner? (Emory University)</li>
+                            <li>Jonathan Valyou &mdash; A Conjugate-Gradient Formulation of the EnKF Algorithm (Florida State University)</li>
+                            <li>Atticus Rex &mdash; Multifidelity-Augmented Gaussian Process Inputs for Surrogate Modeling from Scarce Data (Georgia Tech)</li>
+                            <li>Francesco Brarda &mdash; Preconditioning Via Spectral Density Driven Graph Neural Networks (Emory University)</li>
+                            <li>Haoyang Qian &mdash; When Complexity Simplifies: The Paradox of More Random, More Tractable (Florida State University)</li>
+                        </ol>
+                    </td>
+                </tr>
+                <tr class="event-type-break">
+                    <td class="time-col">3:30 - 4:00 PM</td>
+                    <td class="event-col">Coffee Break</td>
+                </tr>
+                <tr class="event-type-plenary">
+                    <td class="time-col">4:00 - 4:45 PM</td>
+                    <td class="event-col">Plenary Talk 2 <small>(45 min)</small> — Lars Ruthotto (Emory University) <br>
+  <span class="talk-title">Title: Optimal Transport and PDE Perspectives on Generative AI</span></td>
+                </tr>
+                <tr>
+                    <td class="time-col">4:45 - 6:15 PM</td>
+                    <td class="event-col"><strong>Student Talk Session II (Chair: Sanghyun Lee)</strong></td>
+                </tr>
+                <tr class="event-details-row">
+                    <td class="time-col"></td>
+                    <td class="event-col">
+                        <ol class="speaker-list">
+                            <li>Pengjun Wang &mdash; Error Estimates of a Training-Free Diffusion Model for High-Dimensional Sampling (Auburn University)</li>
+                            <li>Caleb Fikes &mdash; PTYDIFF: Score-Induced Implicit Phase Choice Sampling for Nonlinear Ptychographic Imaging Problems (Emory University)</li>
+                            <li>Jonathan Engle &mdash; Elections and the Spatial Public Goods Game (Florida State University)</li>
+                            <li>Munawar Ali &mdash; Noise Estimation of SDE from a Single Data Trajectory (Florida State University)</li>
+                             <li>Farhana Taiyebah &mdash; Accelerating Posterior Inference from Pulsar Light Curves via Learned Latent Representations and Local Simulator-Guided Optimization
+ (Florida State University)</li>
+                        </ol>
+                    </td>
+                </tr>
+                <tr class="event-type-social">
+                    <td class="time-col">6:15 PM</td>
+                    <td class="event-col">Dinner / Poster Session <small>(16 posters)</small></td>
+                </tr>
+                <tr class="event-details-row">
+                    <td class="time-col"></td>
+                    <td class="event-col">
+                        <ol class="speaker-list">
+                            <li>Kapil Chawla &mdash; DG-FEONet: Learning Discontinuous PDE Solutions with Neural Networks (Florida State University)</li>
+                            <li>Srijon Sarkar &mdash; Kronecker Approximations of Covariance Matrices for Solving Inverse Problems (Emory University)</li>
+                            <li>Ngoc Hien Tran &mdash; Reduced Fracture Model for Reactive Transport (Auburn University)</li>
+                            <li>Yahong Yang &mdash; Learning in Group-Invariant Radon Spaces from Finite Samples (Georgia Tech)</li>
+                            <li>Vivian Zhang &mdash; Multifidelity Operator Inference: Reduced Order Modeling of PDEs from Scarce Data (Georgia Tech)</li>
+                            <li>Shikhar Shah &mdash; Block Jacobi Preconditioning on Analog Hardware (Emory University)</li>
+                            <li>Anand Natarajan Sriram &mdash; Multifidelity Gaussian Processes for Vortex Dominated Flows (Georgia Tech)</li>
+                            <li>Benjamin Burns &mdash; Infinite-dimensional Stein variational inference with derivative-informed neural operators (Georgia Tech)</li>
+                            <li>Meixi Li &mdash; Detecting repeating patterns in signals (Georgia Tech)</li>
+                            <li>Tianshi Xu &mdash; Preconditioned Truncated Single-Sample Estimators
+for Scalable Stochastic Optimization (Emory University)</li>
+                            <li>Toma Debnath &mdash; On the emergence of antiphase synchronization (Florida State University)</li>
+                            <li>Zhongjie Shi &mdash; Learning theory of sequence-to-sequence mapping between manifolds with Transformers (Georgia Tech)</li>
+                            <li>Callie Reid &mdash; Dynamics Shape the Perception of Network Structure (Florida State University)</li>
+                            <li>Shiyi Lyu &mdash; Improvement of Reducing Dynamical Systems on Networks (Florida State University)</li>
+                            <li>Zixiang Xiong &mdash; Applying Linear Regression on Ensemble score filter (Florida State University)</li>
+                            <li>Benjamin Yellin &mdash; First-Order PINNs and LSFEM (Emory University)</li>
+
+                        </ol>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Saturday, April 4 -->
+    <div class="schedule-day modern-card p-0">
+        <div class="schedule-header">
+            <h3 class="m-0 text-white" style="font-size: 1.5rem;">Saturday, April 4</h3>
+            <span class="badge badge-light" style="font-size: 0.9rem; color: var(--primary-blue);">8:00 AM – 5:15 PM</span>
+        </div>
+        <table class="schedule-table">
+            <tbody>
+                <tr class="event-type-social">
+                    <td class="time-col">8:00 - 9:00 AM</td>
+                    <td class="event-col">Breakfast <small>(provided)</small></td>
+                </tr>
+                <tr class="event-type-plenary">
+                    <td class="time-col">9:00 - 9:45 AM</td>
+ <td class="event-col">Plenary Talk 3 <small>(45 min)</small> — Alessandro Veneziani (Emory University) <br>
+  <span class="talk-title">Title: The role of Mathematics in the Clinics of Cardiovascular Diseases: Challenges and Perspectives</span></td>
+                <tr>
+                    <td class="time-col">9:45 - 11:15 AM</td>
+                    <td class="event-col"><strong>Student Talk Session III (Chair: Feng Bao)</strong></td>
+                </tr>
+                <tr class="event-details-row">
+                    <td class="time-col"></td>
+                    <td class="event-col">
+                        <ol class="speaker-list">
+                            <li>Jingqiao Tang &mdash; Data Assimilation Framework for Uncertainty Reduction in Learning Data-Driven Dynamical Systems (Florida State University)</li>
+                            <li>Ruoyu Hu &mdash; Introduction of Power Grid with a Numerical Example on Feedback Control Problem with Data Assimilation (Florida State University)</li>
+                            <li>Yi Liu &mdash; Multi-level Machine Learning Framework for Inverse Scattering Problems (Auburn University)</li>
+                            <li>Tomoki Koike &mdash; Sparse POD Mode Selection and Manifold Dimensionality Reduction with Neural Networks (Georgia Tech)</li>
+                            <li>Seungmin Lee&mdash; An optimization-based bound-preserving limiter for two-phase systems (Florida State University)</li>
+                        </ol>
+                    </td>
+                </tr>
+                <tr class="event-type-break">
+                    <td class="time-col">11:15 - 11:45 AM</td>
+                    <td class="event-col">Coffee Break</td>
+                </tr>
+                <tr>
+                    <td class="time-col">11:45 AM - 12:30 PM</td>
+                    <td class="event-col"><strong>Panel Discussion</strong> <small>(45 min)</small><br><span class="text-muted">Careers and Research Opportunities in Scientific Computing and Data Science</span></td>
+                </tr>
+                <tr class="event-type-social">
+                    <td class="time-col">12:30 - 1:45 PM</td>
+                    <td class="event-col">Lunch <small>(provided)</small></td>
+                </tr>
+                <tr>
+                    <td class="time-col">1:45 - 3:15 PM</td>
+                    <td class="event-col"><strong>Student Talk Session IV (Chair: Ziad Musslimani)</strong></td>
+                </tr>
+                <tr class="event-details-row">
+                    <td class="time-col"></td>
+                    <td class="event-col">
+                        <ol class="speaker-list">
+                            <li>Ferhat Karabatman &mdash; Geometric Perspective on Concentration Phenomena in Frame Theory (Florida State University)</li>
+                            <li>Xu (Melissa) Wang &mdash; A Primal-Dual Price-Optimization Method for Computing Equilibrium Prices in Mean-Field Games Models (Emory University)</li>
+                            <li>Mujtaba Ali &mdash; On the Hausdorff Stability of Barcodes over Posets (Florida State University)</li>
+                            <li>Jiaqi Yang &mdash; Multi-patient Computational Analysis of Type B Aortic Dissections (Emory University)</li>
+                            <li>Haoran Yan &mdash; Understanding Denoising Autoencoders through the Manifold Hypothesis: A Geometric Perspective (Georgia Tech)</li>
+                        </ol>
+                    </td>
+                </tr>
+                <tr class="event-type-break">
+                    <td class="time-col">3:15 - 3:45 PM</td>
+                    <td class="event-col">Coffee Break</td>
+                </tr>
+                    <td class="time-col">3:45 - 5:15 PM</td>
+                    <td class="event-col"><strong>Student Talk Session V (Chair: Yuanzhe Xi)</strong></td>
+                </tr>
+                <tr class="event-details-row">
+                    <td class="time-col"></td>
+                    <td class="event-col">
+                        <ol class="speaker-list">
+                            <li>Yi-Yung Yang &mdash; Bound-preserving and Entropy Stable Enriched Galerkin Methods for Nonlinear Hyperbolic Equations (Florida State University)</li>
+                            <li>Kha Doan &mdash; Dynamically Regularized Lagrange Multiplier Method for the Cahn-Hilliard&ndash;Navier&ndash;Stokes System (Auburn University)</li>
+                            <li>Leonardo Molinari &mdash; Computational Framework for Cardiac Radiofrequency Ablation: Multiphysics Modeling and Domain Decomposition (Emory University)</li>
+                            <li>Akshita Sahni &mdash; A Reduced Order Model for Rapid 3D Fluid-Structure Interaction Simulation of Aortic Valve Flows (Georgia Tech)</li>
+                            <li>James Orgeron &mdash; Habitat Fragmentation Promotes Spatial Scale Separation Under Resource Competition (Florida State University)</li>
+                        </ol>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="time-col">5:15 PM</td>
+                    <td class="event-col"><strong>Closing Remarks</strong></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<!-- Footer -->
+<footer style="background: var(--primary-blue); color: rgba(255,255,255,0.7); padding: 3rem 0;">
+    <div class="container text-center">
+        <p class="mb-2">&copy; 2026 Southeast Applied and Computational Math Student Workshop</p>
+        <p class="small mb-0">Department of Mathematics, Emory University | Atlanta, GA</p>
+    </div>
+</footer>
+
+<!-- Google Analytics -->
+<script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=UA-"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+
+  gtag("js", new Date());
+  gtag("config", "UA-");
+</script>
+
+<!-- Code for hash tags -->
+<script type="text/javascript">
+  $(document).ready(function () {
+    if (window.location.hash !== "") {
+      $(`a[href="${window.location.hash}"]`).tab("show");
+    }
+
+    $("a[data-toggle='tab']").on("shown.bs.tab", function (e) {
+      const hash = $(e.target).attr("href");
+      if (hash.substr(0, 1) === "#") {
+        const position = $(window).scrollTop();
+        window.location.replace(`#${hash.substr(1)}`);
+        $(window).scrollTop(position);
+      }
+    });
+  });
+</script>
+<!--    <script src="static/js/modules/lazyLoad.js"></script>-->
+
+</body>
+</html>

@@ -5,8 +5,8 @@ This is a static HTML/CSS personal academic website with a clean, light visual s
 ## Pages
 
 - `index.html`: homepage with profile, research overview, current funded projects, selected publications, positions, and student-facing links
-- `research.html`: research themes and current funded projects
-- `publications.html`: selected recent publications and conference work
+- `research.html`: recent research directions and applications
+- `publications.html`: complete publication list in reverse chronological order
 - `software.html`: research software portfolio
 - `teaching.html`: current and past teaching
 - `group.html`: current members, alumni, and group photo
@@ -14,8 +14,10 @@ This is a static HTML/CSS personal academic website with a clean, light visual s
 
 ## Theme
 
-The design uses an Emory-inspired accent palette on a mostly white background, with restrained typography and simple content sections. It does not recreate or bundle official Emory logos or signatures.
+The design uses an Emory-inspired accent palette on a mostly white background, with restrained typography and simple content sections. Event pages include sponsor logos only where they are part of the event record.
 
-## Notes
+## Department Server Deployment
 
-The CV link on the current public site returned a 404 during an earlier content pass, so the prominent CV button has been replaced with email/request links. Once the correct PDF path is available, it can be added back.
+This folder includes the current personal website plus local copies of the public event archives `ACM26/` and `Precond24/`. It also includes the old `assets/papers/` PDFs that were publicly reachable.
+
+When uploading to the Emory department server, replace the top-level personal website files with this folder. If a `PDF/` archive already exists on the server, preserve it: the old `mathcs.emory.edu/~yxi26/PDF/` files were not publicly downloadable during this packaging pass.

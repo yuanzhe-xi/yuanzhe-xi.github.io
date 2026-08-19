@@ -1,0 +1,272 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <!-- Required meta tags -->
+    <meta charset="utf-8"/>
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- External Javascript libs_ext  -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@5/dist/d3.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.3/dist/handlebars.min.js"
+            integrity="sha256-/PJBs6QWvXijOFIX04kZpLb6ZtSQckdOIavLWKKOgXU="
+            crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+
+    <script
+            src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"
+    ></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+            integrity="sha256-WqU1JavFxSAMcLP2WIOI+GB2zWmShMI82mTpLDcqFUg="
+            crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/min/moment.min.js"
+            integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ="
+            crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment-timezone@0.5.28/builds/moment-timezone-with-data.min.js"
+            integrity="sha256-IWYg4uIC8/erItNXYvLtyYHioRi2zT1TFva8qaAU/ww="
+            crossorigin="anonymous"></script>
+
+
+    <!-- Library libs_ext -->
+    <script src="static/js/libs_ext/typeahead.bundle.js"></script>
+
+
+    <!--    Internal Libs -->
+    <script src="static/js/data/api.js"></script>
+
+    
+
+    <!-- External CSS -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+          integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY="
+          crossorigin="anonymous">
+
+    <!-- External Fonts (no google for china) -->
+    <link
+            href="static/css/Lato.css"
+            rel="stylesheet"
+    />
+    <link href="static/css/Exo.css" rel="stylesheet"/>
+    <link
+            href="static/css/Cuprum.css"
+            rel="stylesheet"
+    />
+    <link rel="stylesheet" href="static/css/main.css"/>
+<!--    <link rel="stylesheet" href="static/css/fa_regular.css"/>-->
+    <link rel="stylesheet" href="static/css/fa_solid.css"/>
+    <link rel="stylesheet" href="static/css/lazy_load.css"/>
+    <link rel="stylesheet" href="static/css/typeahead.css"/>
+
+    <title>Precond 24: Directions</title>
+    
+</head>
+
+<body>
+<!-- NAV -->
+
+<nav
+        class="navbar sticky-top navbar-expand-lg navbar-light bg-light mr-auto"
+        id="main-nav"
+>
+    <div class="container">
+        <a class="navbar-brand" href="index.html">
+            <img
+                    class="logo" src="static/images/logo.gif"
+                    height="auto"
+            width="40px"
+            />
+        </a>
+        
+        <a class="navbar-brand" href="index.html">Precond 24</a>
+        
+        <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+                class="collapse navbar-collapse text-right flex-grow-1"
+                id="navbarNav"
+        >
+            <ul class="navbar-nav ml-auto">
+                
+                <li class="nav-item ">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                
+                <li class="nav-item active">
+                        <a class="nav-link" href="directions.html">
+                            Directions
+                            </a>
+                    </li>
+
+                    <li class="nav-item ">
+                        <a class="nav-link" href="program.html">Program</a>
+                      </li>
+      
+                <li class="nav-item ">
+                        <a class="nav-link" href="registration.html">Registration</a>
+                    </li>
+                  
+                <li class="nav-item ">
+                    <a class="nav-link" href="locations.html">
+                        Hotels and Travel
+                        </a>
+                </li>
+                
+                <li class="nav-item ">
+                    <a class="nav-link" href="pastEvents.html">Past Events</a>
+                </li>
+                
+                <!--<li class="nav-item ">
+                        <a class="nav-link" href="accepted.html">Accepted Talks and Minisymposia</a>
+                      </li>-->
+                    
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+<!-- User Overrides -->
+
+
+
+<div class="container">
+    <!-- Tabs -->
+    <div class="tabs">
+        
+
+    </div>
+    <!-- Content -->
+    <div class="content">
+  
+  <div class="page-header text-center">
+    <h1>Directions</h1>
+  </div>
+
+        <h4>Conference Location</h4>
+<ul>
+<li>Klaus Advanced Computing Building (KACB), Georgia Institute of Technology</li>
+<li><a href="https://www.google.com/maps/dir//266+Ferst+Dr,+Atlanta,+GA+30313/@33.7767811,-84.3962829,625m/data=%213m1%211e3%214m8%214m7%211m0%211m5%211m1%211s0x88f50461dd6062f3:0x120f76d2b5da1f33%212m2%211d-84.3959118%212d33.7769208" target="blank"> Map and Directions to KACB</a></li> <li><a href="https://www.google.com/maps?t=h&ll=33.7782492,-84.3990715&spn=0.0027519,0.0044144&daddr=33.7779855,-84.39888&output=classic&dg=ntvb" target="blank"> Map and Directions to Visitor Parking</a></li>
+<center>
+        <img src="static/images/floor.jpg" class="rounded" style="height: 700px;" />
+      </center>
+      <center>
+        View of the KACB building from Ferst Dr. Proceed up the rainbow stairs. If you do not want to take the stairs, you can take the path to the left to circle around the building.
+</center>
+      <center>
+        <img src="static/images/research.jpg" class="rounded" style="height: 350px;" />  <img src="static/images/class.jpg" class="rounded" style="height: 350px;" />
+</center>
+      <center> 
+      The Research Wing entrance (where you should go first) is on the right. The entrance to the Classroom Wing is on the left.</center>
+
+</ul>
+<h4>KACB Floor Plan</h4>
+<ul>
+        <center>
+                <img src="static/images/floorplan.png" class="rounded" style="height: 600px;" />
+              </center>
+              To access rooms 14xx and 24xx, exit the Atrium and enter the Classroom wing building. For 24xx classrooms, take the stairs/elevator up to the second floor. The classrooms are on the right after passing the restrooms.
+        </ul>
+</ul>
+
+
+
+
+</ul>
+<h4>Conference Banquet Location</h4>
+<ul>
+<li><a href="https://www.southcitykitchen.com/midtown-hours-and-location/" target="blank">South City Kitchen Midtown</a></li>
+<center>
+        <img src="static/images/directions-sck.jpg" class="rounded" style="height: 700px;" />
+      </center>
+From KACB, South City Kitchen is a 30 minute walk. The map here shows a suggested scenic and pleasant route. It is also possible to take the free Georgia Tech Gold shuttle which goes from KACB to the Midtown MARTA station (blue dot on map) which is the final stop. From there, the walk to the restaurant is much shorter.
+<li><a href="http://bus.gatech.edu/routes/9/stops" target="blank"> Georgia Tech Stinger Shuttle </a>The online/web map has "live shuttle locations" and that you should only board the Gold route buses</li>
+
+
+
+</ul>
+</ul>
+
+</ul>
+<h4>Lunch options:</h4>
+<ul>
+        <li><a href="https://dining.gatech.edu/dining-locations/john-lewis-student-center" target="blank">The student center: </a>The student center is 8 minutes away and has a variety of student food options on the first and second floors. From KACB, walk towards Tech Green and the student center is the building behind the Campanile Fountain.</li>
+<li><a href="https://www.google.com/search?q=tech+square+restaurants&client=ubuntu-sn&hs=eQU&sca_esv=4ae0cb76205a33f7&sca_upv=1&channel=fs&sxsrf=ADLYWIJ3vKQoRrD8y59gxY6Es0LTaUrbtA%3A1717650141471&ei=3UJhZrq3HLye5NoPvIfQ2QI&oq=Tech+Square&gs_lp=Egxnd3Mtd2l6LXNlcnAiC1RlY2ggU3F1YXJlKgIIADIKEAAYsAMY1gQYRzIKEAAYsAMY1gQYRzIKEAAYsAMY1gQYRzIKEAAYsAMY1gQYRzIKEAAYsAMY1gQYRzIKEAAYsAMY1gQYRzIKEAAYsAMY1gQYRzIKEAAYsAMY1gQYRzINEAAYgAQYsAMYQxiKBTITEC4YgAQYsAMYQxjIAxiKBdgBATIZEC4YgAQYsAMYQxjHARjIAxiKBRivAdgBAUjLElC3AVjBC3ACeAGQAQCYAXOgAXOqAQMwLjG4AQPIAQD4AQGYAgOgAqYBwgIFEAAYgATCAg4QLhiABBjHARiOBRivAcICChAAGIAEGEMYigXCAgoQLhiABBhDGIoFwgILEC4YgAQYxwEYrwGYAwCIBgGQBgu6BgQIARgIkgcDMi4xoAfJEA&sclient=gws-wiz-serp" target="blank">The Tech Square: </a>Tech Square is 10 minutes away and also has many dining options, mostly on 5th St between Williams St and Spring St.</li>
+        
+        </ul>
+
+<h4>Dinner options:</h4>
+<ul>    
+Midtown Atlanta offers many fantastic dining options. The main stretch is along Peachtree St NE (not to be confused with West Peachtree St NE runs parallel two blocks west) between North Avenue and 15th Street. Note that many restaurants are closed Mondays.
+</ul>
+</ul>
+
+<center>
+        <img src="static/images/dining-map.jpg" class="rounded" style="height: 700px;" />
+      </center>
+
+ <!-- Sponsors -->
+  
+
+<!-- Google Analytics -->
+<script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=UA-"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+
+  gtag("js", new Date());
+  gtag("config", "UA-");
+</script>
+
+<!-- Code for hash tags -->
+<script type="text/javascript">
+  $(document).ready(function () {
+    if (window.location.hash !== "") {
+      $(`a[href="${window.location.hash}"]`).tab("show");
+    }
+
+    $("a[data-toggle='tab']").on("shown.bs.tab", function (e) {
+      const hash = $(e.target).attr("href");
+      if (hash.substr(0, 1) === "#") {
+        const position = $(window).scrollTop();
+        window.location.replace(`#${hash.substr(1)}`);
+        $(window).scrollTop(position);
+      }
+    });
+  });
+</script>
+<!--    <script src="static/js/modules/lazyLoad.js"></script>-->
+
+</body>
+</html>

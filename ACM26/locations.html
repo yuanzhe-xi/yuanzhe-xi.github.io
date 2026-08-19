@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <!-- Required meta tags -->
+    <meta charset="utf-8"/>
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- External Javascript libs_ext  -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@5/dist/d3.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.3/dist/handlebars.min.js"
+            integrity="sha256-/PJBs6QWvXijOFIX04kZpLb6ZtSQckdOIavLWKKOgXU="
+            crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+
+    <script
+            src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"
+    ></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+            integrity="sha256-WqU1JavFxSAMcLP2WIOI+GB2zWmShMI82mTpLDcqFUg="
+            crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/min/moment.min.js"
+            integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ="
+            crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment-timezone@0.5.28/builds/moment-timezone-with-data.min.js"
+            integrity="sha256-IWYg4uIC8/erItNXYvLtyYHioRi2zT1TFva8qaAU/ww="
+            crossorigin="anonymous"></script>
+
+
+    <!-- Library libs_ext -->
+    <script src="static/js/libs_ext/typeahead.bundle.js"></script>
+
+
+    <!--    Internal Libs -->
+    <script src="static/js/data/api.js"></script>
+
+    
+
+    <!-- External CSS -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+          integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY="
+          crossorigin="anonymous">
+
+    <!-- External Fonts (no google for china) -->
+    <link
+            href="static/css/Lato.css"
+            rel="stylesheet"
+    />
+    <link href="static/css/Exo.css" rel="stylesheet"/>
+    <link
+            href="static/css/Cuprum.css"
+            rel="stylesheet"
+    />
+    <link rel="stylesheet" href="static/css/main.css"/>
+    <link rel="stylesheet" href="static/css/modern-theme.css"/>
+<!--    <link rel="stylesheet" href="static/css/fa_regular.css"/>-->
+    <link rel="stylesheet" href="static/css/fa_solid.css"/>
+    <link rel="stylesheet" href="static/css/lazy_load.css"/>
+    <link rel="stylesheet" href="static/css/typeahead.css"/>
+
+    <title>ACM 2026: Location, Hotels, and Travel</title>
+    
+</head>
+
+<body>
+<!-- NAV -->
+
+<nav
+        class="navbar sticky-top navbar-expand-lg navbar-light bg-light mr-auto"
+        id="main-nav"
+>
+    <div class="container">
+        <a class="navbar-brand" href="index.html">ACM 2026</a>
+        
+        <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+                class="collapse navbar-collapse text-right flex-grow-1"
+                id="navbarNav"
+        >
+            <ul class="navbar-nav ml-auto">
+                
+                <li class="nav-item ">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+      
+                <li class="nav-item ">
+                        <a class="nav-link" href="directions.html">
+                            Directions
+                            </a>
+                    </li>
+                
+                    <li class="nav-item ">
+                        <a class="nav-link" href="program.html">Program</a>
+                      </li>
+      
+                <li class="nav-item ">
+                        <a class="nav-link" href="registration.html">Registration</a>
+                    </li>
+                  
+                <li class="nav-item active">
+                    <a class="nav-link" href="locations.html">
+                        Hotels and Travel
+                        </a>
+                </li>
+                
+                <li class="nav-item ">
+                    <a class="nav-link" href="pastEvents.html">Past Events</a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- User Overrides -->
+
+<div class="container py-5">
+    
+    <div class="page-header text-center mb-5">
+        <h1>Hotels and Travel</h1>
+        <p class="lead text-muted">Emory University is located in the historic Druid Hills neighborhood of Atlanta.</p>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            
+            <!-- Hotels Section -->
+            <div class="modern-card mb-4">
+                <h3 class="mb-4"><i class="fas fa-bed mr-2" style="color: var(--accent-gold);"></i> Nearby Hotels</h3>
+                <ul class="list-unstyled">
+                    <li class="mb-3">
+                        <a href="https://www.univinn.com/" target="_blank" class="d-flex align-items-center p-3 rounded" style="background: #F9FAFB; transition: background 0.2s;">
+                            <div style="flex-shrink: 0; width: 40px; height: 40px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-sm); margin-right: 1rem;">
+                                <i class="fas fa-hotel text-primary"></i>
+                            </div>
+                            <div>
+                                <h5 class="m-0" style="font-size: 1.1rem;">University Inn at Emory</h5>
+                                <small class="text-muted">Closest option, walking distance to campus.</small>
+                            </div>
+                            <i class="fas fa-external-link-alt ml-auto text-muted"></i>
+                        </a>
+                    </li>
+                    <li class="mb-3">
+                        <a href="https://www.emoryconferencecenter.com/" target="_blank" class="d-flex align-items-center p-3 rounded" style="background: #F9FAFB; transition: background 0.2s;">
+                            <div style="flex-shrink: 0; width: 40px; height: 40px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-sm); margin-right: 1rem;">
+                                <i class="fas fa-building text-primary"></i>
+                            </div>
+                            <div>
+                                <h5 class="m-0" style="font-size: 1.1rem;">Emory Conference Center Hotel</h5>
+                                <small class="text-muted">Premium on-campus accommodation.</small>
+                            </div>
+                            <i class="fas fa-external-link-alt ml-auto text-muted"></i>
+                        </a>
+                    </li>
+                    <li class="mb-3">
+                        <a href="https://www.marriott.com/en-us/hotels/atleu-courtyard-atlanta-decatur-downtown-emory/overview/" target="_blank" class="d-flex align-items-center p-3 rounded" style="background: #F9FAFB; transition: background 0.2s;">
+                            <div style="flex-shrink: 0; width: 40px; height: 40px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-sm); margin-right: 1rem;">
+                                <i class="fas fa-city text-primary"></i>
+                            </div>
+                            <div>
+                                <h5 class="m-0" style="font-size: 1.1rem;">Courtyard Atlanta Decatur</h5>
+                                <small class="text-muted">Downtown Decatur, short shuttle ride.</small>
+                            </div>
+                            <i class="fas fa-external-link-alt ml-auto text-muted"></i>
+                        </a>
+                    </li>
+                </ul>
+                <div class="alert alert-light mt-3 mb-0 text-center text-muted border-0">
+                    <small><i class="fas fa-info-circle mr-1"></i> Additional options available in Decatur and Midtown areas.</small>
+                </div>
+            </div>
+
+            <!-- Transportation Section -->
+            <div class="modern-card">
+                <h3 class="mb-4"><i class="fas fa-route mr-2" style="color: var(--accent-gold);"></i> Transportation</h3>
+                <div class="row">
+                    <div class="col-md-6 mb-3 mb-md-0">
+                        <div class="p-3 rounded h-100" style="border: 1px solid var(--border-light);">
+                            <h5 class="text-primary"><i class="fas fa-plane-arrival mr-2"></i> From ATL Airport</h5>
+                            <p class="text-muted small mb-0">Rideshare services (Uber/Lyft/Taxi) are the most convenient and direct way to reach the Emory area from Hartsfield-Jackson Airport (approx. 20-30 mins).</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-3 rounded h-100" style="border: 1px solid var(--border-light);">
+                            <h5 class="text-primary"><i class="fas fa-bus mr-2"></i> Public Transit</h5>
+                            <p class="text-muted small mb-0">MARTA light rail and bus services connect Emory to the rest of Atlanta. Visit <a href="https://www.itsmarta.com/" target="_blank">itsmarta.com</a> for schedules.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer style="background: var(--primary-blue); color: rgba(255,255,255,0.7); padding: 3rem 0;">
+    <div class="container text-center">
+        <p class="mb-2">&copy; 2026 Southeast Applied and Computational Math Student Workshop</p>
+        <p class="small mb-0">Department of Mathematics, Emory University | Atlanta, GA</p>
+    </div>
+</footer>
+
+<!-- Google Analytics -->
+<script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=UA-"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+
+  gtag("js", new Date());
+  gtag("config", "UA-");
+</script>
+
+<!-- Code for hash tags -->
+<script type="text/javascript">
+  $(document).ready(function () {
+    if (window.location.hash !== "") {
+      $(`a[href="${window.location.hash}"]`).tab("show");
+    }
+
+    $("a[data-toggle='tab']").on("shown.bs.tab", function (e) {
+      const hash = $(e.target).attr("href");
+      if (hash.substr(0, 1) === "#") {
+        const position = $(window).scrollTop();
+        window.location.replace(`#${hash.substr(1)}`);
+        $(window).scrollTop(position);
+      }
+    });
+  });
+</script>
+<!--    <script src="static/js/modules/lazyLoad.js"></script>-->
+
+</body>
+</html>
+
+
+ <!-- Sponsors -->
+  
+
+<!-- Google Analytics -->
+<script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=UA-"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+
+  gtag("js", new Date());
+  gtag("config", "UA-");
+</script>
+
+<!-- Code for hash tags -->
+<script type="text/javascript">
+  $(document).ready(function () {
+    if (window.location.hash !== "") {
+      $(`a[href="${window.location.hash}"]`).tab("show");
+    }
+
+    $("a[data-toggle='tab']").on("shown.bs.tab", function (e) {
+      const hash = $(e.target).attr("href");
+      if (hash.substr(0, 1) === "#") {
+        const position = $(window).scrollTop();
+        window.location.replace(`#${hash.substr(1)}`);
+        $(window).scrollTop(position);
+      }
+    });
+  });
+</script>
+<!--    <script src="static/js/modules/lazyLoad.js"></script>-->
+
+</body>
+</html>
